@@ -11,6 +11,6 @@ This application is for rating ramen dishes
 -CSS
 -JAVASCRIPT
 
-#Created By
+# Created By
 Ivan Musila
 © 2025 Ramen-Rating-App. All Rights Reserved.
