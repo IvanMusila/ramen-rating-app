@@ -13,7 +13,7 @@ const ramens = [
         id: 2, 
         name: "Miso Ramen", 
         restaurant: "Menya", 
-        image: "./images/miso1.jpeg", 
+        image: "./images/miso.jpeg", 
         rating: 4, 
         comment: "Very flavorful!" 
     },
@@ -42,7 +42,6 @@ function displayRamens() {
 
 }
 
-displayRamens();
 
 
 function handleClick() {
@@ -62,14 +61,17 @@ function handleClick() {
                 <h3>Restaurant: ${ramen.restaurant}</h3>
                 ${ramen.rating ? `<p>Rating: ${ramen.rating}</p>` : ''}
                 ${ramen.comment ? `<p>Comment: ${ramen.comment}</p>` : ''}
+                <button class="form-btn" id="closeDetails" type="button"> Close <button/>
             `;
+            document.getElementById('closeDetails').addEventListener('click', () => {
+                ramenDetail.innerHTML = "";
+            });
         });
     });
 
     
 }
 
-handleClick();
 
 function formAppear() {
     const button = document.getElementById('add-ramen');
@@ -105,17 +107,11 @@ function formAppear() {
                 </div>
             </form>
         `;
+        document.getElementById('close').addEventListener('click', () => {
+            form.innerHTML = "";
+        });
 });
 }
-// const closeForm = document.getElementById('close');
-// closeForm.addEventListener('click', () => {
-//     const form = document.getElementById('ramen-form');
-//     form.remove();
-
-// });
-// }
-
-formAppear();
 
 function addSubmitListener() {
     const form = document.getElementById('ramen-form');
@@ -143,4 +139,14 @@ function addSubmitListener() {
     });
 }
 
-console.table(ramens);
+// console.table(ramens);
+
+function main(){
+    displayRamens();
+    handleClick(); 
+    addSubmitListener();
+    formAppear();
+    closeForm();
+}
+
+main();
